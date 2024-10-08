@@ -13,7 +13,7 @@ while (salir == False):
 
     print("")
     print("Bienvenido a Empire Inventory. Elija una de las siguientes opciones:")
-    print("1. Cargar 1 producto.")
+    print("1. Cargar 1 o más productos.")
     print("2. Buscar producto.")
     print("3. Ordenar inventario.")
     print("4. Mostrar producto más caro y más barato.")
@@ -32,7 +32,7 @@ while (salir == False):
             seguir_cargando = True
 
             while(seguir_cargando == True):
-                print(f"Opción Seleccionada: {opcion}. Cargar 1 producto.")
+                print(f"Opción Seleccionada: {opcion}. Cargar 1 o más productos.")
                 nombre = ingresar_nombre()
                 nombre = nombre.capitalize()
                 nombre_ya_usado = buscar_nombre(nombre, inventario)
