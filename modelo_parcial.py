@@ -15,9 +15,9 @@ while (salir == False):
     print("Bienvenido a Empire Inventory. Elija una de las siguientes opciones:")
     print("1. Cargar 1 producto.")
     print("2. Buscar producto.")
-    print("3. Ordenar inventario (NO FUNCIONA CORRECTAMENTE).")
+    print("3. Ordenar inventario.")
     print("4. Mostrar producto más caro y más barato.")
-    print("5. Mostrar productos con precio mayor a 15000.")
+    print("5. Mostrar productos con precio mayor a 15000 (NO FUNCIONA CORRECTAMENTE).")
     print("6. Salir.")
     print("")
 
@@ -44,12 +44,13 @@ while (salir == False):
             print(resultado_busqueda)
         case "3":
             inventario_ordenado = ordenar_inventario(inventario)
-            print(inventario_ordenado)
+            for i in range(len(inventario_ordenado)):
+                print(inventario_ordenado[i])
         case "4":
             print(f"Opción Seleccionada: {opcion}. Mostrar producto más caro y más barato.")
             elemento_mas_caro = encontrar_mas_caro(inventario)
             elemento_mas_barato = encontrar_mas_barato(inventario)
-            print(f"Elemento Más Caro: {elemento_mas_caro}\nElemento Más Barato: {elemento_mas_barato}")
+            print(f"Producto Más Caro: {elemento_mas_caro}\nProducto Más Barato: {elemento_mas_barato}")
         case "5":
             print(f"Opción Seleccionada: {opcion}. Mostrar productos con precio mayor a 15000.")
             resultado_mayores = encontrar_precios_mayores(inventario)

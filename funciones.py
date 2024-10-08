@@ -83,20 +83,17 @@ def ordenar_inventario(inventario: list[list]) -> list[list]:
     Retorno: inventario (list[list]).
     '''
     for i in range(len(inventario)):
-        for j in range(len(inventario[i]) - i):
-            precio_a = inventario[i][1]
-            precio_b = inventario[i+1][1]
-
-            if (precio_a > precio_b):
-                temp = inventario[i]
-                inventario[i] = inventario[i+1]
-                inventario[i+1] = temp
+        for j in range(0, len(inventario) - i - 1):
+            if (inventario[j][1] > inventario[j+1][1]):
+                temp = inventario[j]
+                inventario[j] = inventario[j+1]
+                inventario[j+1] = temp
     
     return inventario
 
 def encontrar_mas_caro(inventario: list[list]) -> list:
     '''
-    Busca el elemento más caro del inventario.\n
+    Busca el producto más caro del inventario.\n
     Parámetro: inventario (list[list]).\n
     Retorno: elemento_mas_caro (list).
     '''
@@ -121,7 +118,7 @@ def encontrar_mas_caro(inventario: list[list]) -> list:
 
 def encontrar_mas_barato(inventario: list[list]) -> list:
     '''
-    Busca el elemento más barato del inventario.\n
+    Busca el producto más barato del inventario.\n
     Parámetro: inventario (list[list]).\n
     Retorno: elemento_mas_barato (list).
     '''
@@ -146,7 +143,7 @@ def encontrar_mas_barato(inventario: list[list]) -> list:
 
 def encontrar_precios_mayores(inventario: list[list]) -> list[list] | str:
     '''
-    Busca si el inventario tiene elementos con precio mayor a 15000.\n
+    Busca si el inventario tiene productos con precio mayor a 15000.\n
     Parámetro: inventario (list[list]).\n
     Retorno: mensaje (list[list] | str).
     '''
@@ -159,7 +156,7 @@ def encontrar_precios_mayores(inventario: list[list]) -> list[list] | str:
                 lista_mayores.append(inventario[i])
     
     if (len(lista_mayores) == 0):
-        retorno = "No se encontraron elementos con precio mayor a 15000."
+        retorno = "No se encontraron productos con precio mayor a 15000."
     else:
         retorno = lista_mayores
     
