@@ -33,6 +33,11 @@ def ingresar_nombre() -> str:
     return nombre
 
 def buscar_nombre(nombre: str, inventario: list[list]) -> bool:
+    '''
+    Verifica si el nombre del nuevo producto ingresado al inventario ya está en uso.\n
+    Parámetros: nombre (str), inventario (list[list]).\n
+    Retorno: nombre_ya_usado (bool).
+    '''
     nombre_ya_usado = False
 
     for i in range(len(inventario)):
