@@ -32,6 +32,14 @@ while (salir == False):
             print(f"Opción Seleccionada: {opcion}. Cargar 1 producto.")
             nombre = ingresar_nombre()
             nombre = nombre.capitalize()
+            nombre_ya_usado = buscar_nombre(nombre, inventario)
+
+            while (nombre_ya_usado == True):
+                print("Error. Nombre ya en uso.")
+                nombre = ingresar_nombre()
+                nombre = nombre.capitalize()
+                nombre_ya_usado = buscar_nombre(nombre, inventario)
+
             precio = ingresar_precio()
             cantidad = ingresar_cantidad()
             inventario = cargar_producto(inventario, nombre, precio, cantidad)

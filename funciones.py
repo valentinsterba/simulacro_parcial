@@ -32,6 +32,17 @@ def ingresar_nombre() -> str:
 
     return nombre
 
+def buscar_nombre(nombre: str, inventario: list[list]) -> bool:
+    nombre_ya_usado = False
+
+    for i in range(len(inventario)):
+        for j in range(len(inventario[i])):
+            if (inventario[i][0] == nombre):
+                nombre_ya_usado = True
+                break
+    
+    return nombre_ya_usado
+
 def ingresar_precio() -> float:
     '''
     Permite ingresar el precio del producto.\n
