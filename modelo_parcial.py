@@ -29,20 +29,30 @@ while (salir == False):
 
     match opcion:
         case "1":
-            print(f"Opción Seleccionada: {opcion}. Cargar 1 producto.")
-            nombre = ingresar_nombre()
-            nombre = nombre.capitalize()
-            nombre_ya_usado = buscar_nombre(nombre, inventario)
+            seguir_cargando = True
 
-            while (nombre_ya_usado == True):
-                print("Error. Nombre ya en uso.")
+            while(seguir_cargando == True):
+                print(f"Opción Seleccionada: {opcion}. Cargar 1 producto.")
                 nombre = ingresar_nombre()
                 nombre = nombre.capitalize()
                 nombre_ya_usado = buscar_nombre(nombre, inventario)
 
-            precio = ingresar_precio()
-            cantidad = ingresar_cantidad()
-            inventario = cargar_producto(inventario, nombre, precio, cantidad)
+                while (nombre_ya_usado == True):
+                    print("Error. Nombre ya en uso.")
+                    nombre = ingresar_nombre()
+                    nombre = nombre.capitalize()
+                    nombre_ya_usado = buscar_nombre(nombre, inventario)
+
+                precio = ingresar_precio()
+                cantidad = ingresar_cantidad()
+                inventario = cargar_producto(inventario, nombre, precio, cantidad)
+                continuar_carga = input("¿Desea seguir cargando? 1-Sí, 0-No: ")
+
+                while (continuar_carga != "1") and (continuar_carga != "0"):
+                    continuar_carga = input("Error. Ingrese una opción válida (1-Sí, 0-No): ")
+
+                if (continuar_carga == "0"):
+                    seguir_cargando = False
         case "2":
             print(f"Opción Seleccionada: {opcion}. Buscar producto.")
             nombre_a_buscar = ingresar_nombre()
