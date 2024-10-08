@@ -166,7 +166,7 @@ def encontrar_precios_mayores(inventario: list[list]) -> list[list] | str:
     precio_comparado = 15000
     lista_mayores = []
     for i in range(len(inventario)):
-        for j in range(len(inventario[i])):
+        for j in range(1):
             precio_producto = inventario[i][1]
             if (precio_producto > precio_comparado):
                 lista_mayores.append(inventario[i])

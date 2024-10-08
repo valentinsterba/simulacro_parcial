@@ -17,7 +17,7 @@ while (salir == False):
     print("2. Buscar producto.")
     print("3. Ordenar inventario.")
     print("4. Mostrar producto más caro y más barato.")
-    print("5. Mostrar productos con precio mayor a 15000 (NO FUNCIONA CORRECTAMENTE).")
+    print("5. Mostrar productos con precio mayor a 15000.")
     print("6. Salir.")
     print("")
 
@@ -72,7 +72,8 @@ while (salir == False):
         case "5":
             print(f"Opción Seleccionada: {opcion}. Mostrar productos con precio mayor a 15000.")
             resultado_mayores = encontrar_precios_mayores(inventario)
-            print(resultado_mayores)
+            for i in range(len(resultado_mayores)):
+                print(resultado_mayores[i])
         case "6":
             print("¡Gracias por su visita!")
             salir = True
